@@ -1,12 +1,15 @@
 /*
   01 Botón digital
 
-  Charla sobre Arduino y la evolución de los 
+  Ejemplo de funcionamiento de un botón.
+
+  Ponencia "Evolución de los mandos de videojuegos y Arduino"
 
   Creado el 18 Feb 2019
   por Alfonso Jiménez Vílchez
 
-  This example code is in the public domain.
+  GNU GPL 3.0
+  https://github.com/sambrista/velez-impulsa-1819/
 */
 
 int boton; // Variable donde almacenamos el valor del botón

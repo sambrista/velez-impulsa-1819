@@ -1,12 +1,14 @@
 /*
-  01 Botón digital
+  03 Mando digital
 
-  Charla sobre Arduino y la evolución de los 
+  Creación de un mando a partir de varios botones.
+  Ponencia "Evolución de los mandos de videojuegos y Arduino"
 
   Creado el 18 Feb 2019
   por Alfonso Jiménez Vílchez
 
-  This example code is in the public domain.
+  GNU GPL 3.0
+  https://github.com/sambrista/velez-impulsa-1819/
 */
 
 int arriba, abajo, izquierda, derecha, boton; // Variable donde almacenamos el valor del botón
@@ -16,9 +18,8 @@ int pinAbajo = 3; // Pin donde leemos el botón
 int pinIzquierda= 6; // Pin donde leemos el botón
 int pinDerecha = 4; // Pin donde leemos el botón
 int pinLed = 13; // Pin donde enchufamos el LED
-// the setup function runs once when you press reset or power the board
+
 void setup() {
-  // initialize digital pin LED_BUILTIN as an output.
   pinMode(pinLed, OUTPUT);
   pinMode(pinBoton,INPUT);
   pinMode(pinArriba,INPUT);
@@ -29,7 +30,6 @@ void setup() {
   Serial.begin(9600);
 }
 
-// the loop function runs over and over again forever
 void loop() {
   izquierda = digitalRead(pinIzquierda);
   arriba = digitalRead(pinArriba);
@@ -42,5 +42,5 @@ void loop() {
   Serial.print(derecha);
   Serial.print(abajo);
   Serial.println(boton);
-  delay(100);        // delay in between reads for stability
+  delay(100);
 }

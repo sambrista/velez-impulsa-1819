@@ -1,28 +1,17 @@
 /*
-  Blink
+  02 Lectura de joystick analógico
 
-  Turns an LED on for one second, then off for one second, repeatedly.
+  Ejemplo de funcionamiento de un joystick analógico.
+  Ponencia "Evolución de los mandos de videojuegos y Arduino"
 
-  Most Arduinos have an on-board LED you can control. On the UNO, MEGA and ZERO
-  it is attached to digital pin 13, on MKR1000 on pin 6. LED_BUILTIN is set to
-  the correct LED pin independent of which board is used.
-  If you want to know what pin the on-board LED is connected to on your Arduino
-  model, check the Technical Specs of your board at:
-  https://www.arduino.cc/en/Main/Products
+  Creado el 18 Feb 2019
+  por Alfonso Jiménez Vílchez
 
-  modified 8 May 2014
-  by Scott Fitzgerald
-  modified 2 Sep 2016
-  by Arturo Guadalupi
-  modified 8 Sep 2016
-  by Colby Newman
-
-  This example code is in the public domain.
-
-  http://www.arduino.cc/en/Tutorial/Blink
+  GNU GPL 3.0
+  https://github.com/sambrista/velez-impulsa-1819/
 */
 
-int x,y, boton; // Variable donde almacenamos el valor del botón
+int x,y, boton; // Variable donde almacenamos la posición horizontal, vertical y el valor del botón
 int pinBoton = 2; // Pin donde leemos el botón
 int pinLed = 13; // Pin donde enchufamos el LED
 
@@ -33,8 +22,8 @@ void setup() {
   Serial.begin(9600);
 }
 
-// the loop function runs over and over again forever
 void loop() {
+  // Leemos analógicamente ambos ejes del joystick
   x = analogRead(A0);
   y = analogRead(A1);
   boton = digitalRead(pinBoton);
@@ -45,5 +34,5 @@ void loop() {
   Serial.print(y);
   Serial.print(" boton:");
   Serial.println(boton);
-  delay(100);        // delay in between reads for stability
+  delay(100);
 }
